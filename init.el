@@ -1,3 +1,9 @@
+;;; groovy-pack.el --- Groovy
+
+;;; Commentary:
+
+;;; Code:
+
 (install-pack 'groovy-mode)
 
 ;;; turn on syntax highlighting
@@ -14,3 +20,5 @@
 ;;           '(lambda ()
 ;;              (require 'groovy-electric)
 ;;              (groovy-electric-mode)))
+
+;;; groovy-pack.el ends here
