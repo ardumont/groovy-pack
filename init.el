@@ -14,6 +14,3 @@
 ;;           '(lambda ()
 ;;              (require 'groovy-electric)
 ;;              (groovy-electric-mode)))
-
-;; Load bindings config
-(live-load-config-file "bindings.el")
