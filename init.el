@@ -1,10 +1,11 @@
-;;; groovy-pack.el --- Groovy
+( ;;; groovy-pack.el --- Groovy
 
 ;;; Commentary:
 
 ;;; Code:
 
-(install-pack 'groovy-mode)
+ install-packs '(groovy-mode
+                 smartscan))
 
 ;;; turn on syntax highlighting
 (global-font-lock-mode 1)
@@ -14,6 +15,9 @@
 (add-to-list 'auto-mode-alist '("\.groovy$" . groovy-mode))
 (add-to-list 'auto-mode-alist '("\.gradle$" . groovy-mode))
 (add-to-list 'interpreter-mode-alist '("groovy" . groovy-mode))
+
+(require 'smartscan)
+(add-hook 'groovy-mode-hook (lambda () (smartscan-mode)))
 
 ;;; make Groovy mode electric by default.
 ;; (add-hook 'groovy-mode-hook
