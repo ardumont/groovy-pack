@@ -1,11 +1,11 @@
-( ;;; groovy-pack.el --- Groovy
+;;; groovy-pack.el --- Groovy
 
 ;;; Commentary:
 
 ;;; Code:
 
- (require 'install-packages-pack)
- install-packs '(groovy-mode
+(require 'install-packages-pack)
+(install-packs '(groovy-mode
                  smartscan))
 
 ;;; turn on syntax highlighting
