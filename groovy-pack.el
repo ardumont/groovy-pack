@@ -4,6 +4,7 @@
 
 ;;; Code:
 
+ (require 'install-packages-pack)
  install-packs '(groovy-mode
                  smartscan))
 
@@ -25,4 +26,5 @@
 ;;              (require 'groovy-electric)
 ;;              (groovy-electric-mode)))
 
+(provide 'groovy-pack)
 ;;; groovy-pack.el ends here
