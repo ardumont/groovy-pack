@@ -5,8 +5,8 @@
 ;;; Code:
 
 (require 'install-packages-pack)
-(install-packs '(groovy-mode
-                 smartscan))
+(install-packages-pack/install-packs '(groovy-mode
+                                       smartscan))
 
 (require 'groovy-mode)
 
