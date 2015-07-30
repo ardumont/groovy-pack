@@ -4,28 +4,27 @@
 
 ;;; Code:
 
-(require 'install-packages-pack)
-(install-packages-pack/install-packs '(groovy-mode
-                                       smartscan))
+(use-package smartscan)
 
-(require 'groovy-mode)
+(use-package groovy-mode
+  :config
+  ;; use groovy-mode when file ends in .groovy or has #!/bin/groovy at start
+  (add-to-list 'auto-mode-alist '("\.groovy$" . groovy-mode))
+  (add-to-list 'auto-mode-alist '("\.gradle$" . groovy-mode))
+  (add-to-list 'interpreter-mode-alist '("groovy" . groovy-mode))
 
-;;; turn on syntax highlighting
-(global-font-lock-mode 1)
+  ;; make Groovy mode electric by default.
+  ;; (add-hook 'groovy-mode-hook
+  ;;           '(lambda ()
+  ;;              (require 'groovy-electric)
+  ;;              (groovy-electric-mode)))
 
-;;; use groovy-mode when file ends in .groovy or has #!/bin/groovy at start
-(add-to-list 'auto-mode-alist '("\.groovy$" . groovy-mode))
-(add-to-list 'auto-mode-alist '("\.gradle$" . groovy-mode))
-(add-to-list 'interpreter-mode-alist '("groovy" . groovy-mode))
+  (add-hook 'groovy-mode-hook 'smartscan-mode))
 
-(require 'smartscan)
-(add-hook 'groovy-mode-hook (lambda () (smartscan-mode)))
-
-;;; make Groovy mode electric by default.
-;; (add-hook 'groovy-mode-hook
-;;           '(lambda ()
-;;              (require 'groovy-electric)
-;;              (groovy-electric-mode)))
+(use-package font-core
+  :config
+  ;; turn on syntax highlighting
+  (global-font-lock-mode 1))
 
 (provide 'groovy-pack)
 ;;; groovy-pack.el ends here
